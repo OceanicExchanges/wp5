@@ -8,7 +8,9 @@
 
 This script extracts words from ShiCo backend and shows all words in the column and presents the similarity score:
 
+'''
 python3 extract_words.py backend query_term min_count show_every_x translate merge_words
+'''
 
 with:
 
@@ -21,8 +23,9 @@ with:
 
 __Example:__
 
+'''
 python3 extract_words.py http://193.167.189.229/shico-settings-swe/ sjukdom 0 2 dict.sw sjukdom:sjuldom,fjukdom,sjnkdom,sjutdom,fjuldom,fjutdom,slutdom,fjufbom  afled:aflidit,alled,aflcd,asted,afledo,afied långvarig:längwarig,långvari
-
+'''
 
 ## Dataset:
 
