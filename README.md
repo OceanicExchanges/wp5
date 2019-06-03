@@ -38,11 +38,11 @@ Categories:
 
 | Modelname | Frontend | Backend |
 |-----------|----------|---------|
-| Swedish | http://www.comhis.fi/shico_swe | http://193.167.189.229/shico-settings-swe/  |
+| Finnish  | http://www.comhis.fi/shico_fin | http://195.148.30.187/shico-settings-fin/ |
 | German SBB| http://shico-sbb.ims.uni-stuttgart.de/| http://shico-sbb.ims.uni-stuttgart.de/backend/|
 | German Europeana| http://shico-europeana.ims.uni-stuttgart.de/ | http://shico-europeana.ims.uni-stuttgart.de/backend/|
 | German Chronicling America| http://shico-ca.ims.uni-stuttgart.de/  | http://shico-ca.ims.uni-stuttgart.de/backend/|
-| Finnish  | http://www.comhis.fi/shico_fin | http://195.148.30.187/shico-settings-fin/ |
+| Swedish | http://www.comhis.fi/shico_swe | http://193.167.189.229/shico-settings-swe/  |
 | Times | https://shico-times-2.hum.uu.nl/  | https://shico-times-2.hum.uu.nl/api/ |
 
 
