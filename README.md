@@ -1,8 +1,12 @@
 # Using word vector models to trace conceptual change over time
 
+Here, we provide scripts that have been created to trace concepts across different time spans. These scripts require that embeddings are available through the [ShiCo](https://github.com/NLeSC/ShiCo) backend.
 
 
 ## Scripts:
+
+- extract_words.py: script to generate table of times and words and shows the similarity scores for each word in the given time span
+
 
 ### extract_words.py
 
