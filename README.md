@@ -63,8 +63,8 @@ python3 -i scripts/analyze.py <file.tsv>
 To superimpose multiple concepts on the same plot:
 
 ```
-> superimpose(df,<column1>,<filename>,<plot title>)')
-> plot_timeline(df,<column2>,<filename>,<plot title>)')
+> superimpose(df,<column1>,<filename>,<plot title>)
+> plot_timeline(df,<column2>,<filename>,<plot title>)
 ```
 
 Convert years to decades:
