@@ -6,6 +6,7 @@ Here, we provide scripts that have been created to trace concepts across differe
 ## Scripts:
 
 - extract_words.py: script to generate table of times and words and shows the similarity scores for each word in the given time span
+- analyze.py: script to make timeline plots of concepts
 
 
 ### extract_words.py
@@ -18,7 +19,7 @@ python3 extract_words.py backend query_term min_count show_every_x translate mer
 
 with:
 
--  backend: URL of the backend 
+-  backend: URL of the backend
 - query_term: term that is searched
 - min_count: minimum occurrence of term in all models
 - show_every_x: stepwise for the selected time spans (e.g. for German only models are availble for every two years, thus a value of 2 should be selected)
@@ -49,6 +50,42 @@ year	sjukdom(199)	bröstsjukdom(59)	afled(45)	sinnessjukdom(40)	åkomma(31)	ögo
 1858_1868	0.6470	0.6323	0.0000	0.0000	0.0000	0.0000	0.0000	0.5498	0.5923	0.5778	0.0000	0.0000	0.0000	0.5539	0.0000	0.6083	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.00
 ```
 
+### analyze.py
+
+This script loads the table to Pandas dataframe for plotting the timeseries of a concept:
+
+```
+python3 -i scripts/analyze.py <file.tsv>
+
+> plot_timeline(df,<column>,<filename>,<plot_title>)
+```
+
+To superimpose multiple concepts on the same plot:
+
+```
+> superimpose(df,<column1>,<filename>,<plot title>)')
+> plot_timeline(df,<column2>,<filename>,<plot title>)')
+```
+
+Convert years to decades:
+
+```
+df = to_decade(df)
+```
+
+__Example 2:__
+
+```
+python3 scripts/extract_words.py http://193.167.189.229/shico-settings-swe/ sjukdom 0 2 data/dict.sw sjukdom:sjuldom,fjukdom,sjnkdom,sjutdom,fjuldom,fjutdom,slutdom,fjufbom  afled:aflidit,alled,aflcd,asted,afledo,afied långvarig:längwarig,långvari > sjukdom.tsv
+python3 -i scripts/analyze.py sjukdom.tsv
+> superimpose(df,'bröstsjukdom(59)','sjukdom')
+> plot_timeline(df,'sinnessjukdom(40)','sjukdom','Concepts of illness.')
+```
+
+__Output of Example 2:__
+
+![Example figure.](data/sjukdom.png?raw=true "Example figure.")
+
 ## Dataset:
 
 Translations:
@@ -60,11 +97,11 @@ Categories:
 
 | Modelname | Frontend | Backend |
 |-----------|----------|---------|
-| Finnish  | http://www.comhis.fi/shico_fin | http://195.148.30.187/shico-settings-fin/ |
+| Finnish NLF | http://www.comhis.fi/shico_fin | http://195.148.30.187/shico-settings-fin/ |
 | German SBB| http://shico-sbb.ims.uni-stuttgart.de/| http://shico-sbb.ims.uni-stuttgart.de/backend/|
 | German Europeana| http://shico-europeana.ims.uni-stuttgart.de/ | http://shico-europeana.ims.uni-stuttgart.de/backend/|
 | German Chronicling America| http://shico-ca.ims.uni-stuttgart.de/  | http://shico-ca.ims.uni-stuttgart.de/backend/|
-| Swedish | http://www.comhis.fi/shico_swe | http://193.167.189.229/shico-settings-swe/  |
+| Swedish NLF | http://www.comhis.fi/shico_swe | http://193.167.189.229/shico-settings-swe/  |
 | Times | https://shico-times-2.hum.uu.nl/  | https://shico-times-2.hum.uu.nl/api/ |
 
 
